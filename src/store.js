@@ -15,7 +15,6 @@ export const store= reactive({
     searchText:"",
     
 
-
    apio: "https://api.themoviedb.org/3/search/movie?query=ritorno&include_adult=false&language=en-US&page=1",
    
 });
