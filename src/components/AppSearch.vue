@@ -17,17 +17,9 @@ export default {
         v-model.trim="store.searchText">
         <!-- il .trim serve ad eliminare gli spazi -->
 
-        <button type="submit" class="btn">
+        <button @click="$emit('mySelection')">
             SEARCH
-        
-        
-                <!-- questo sotto bisogna aggiungerlo sopra ma mi dà errore e lo lascio un attimo qua -->
-                <!-- @click.prevent="$emit('mySearch')"  -->
-                <!-- in @click devo mettere "$emit('quapossometterequellochevoglio')" -->
-                <!-- metterò mySearch -->
 
-                <!-- aggiungiamo .prevent dopo @click per evitare   che si ricarichi la pagina (in questo caso si ricarica perchè c'è type="submit"-->
-            
             
         </button>
 

@@ -19,13 +19,13 @@ export default {
   methods: {
     getCharachters() {
 
-      let myURL = store.apiURL
+      let myURL = store.apiURL_movies
 
-      // if(store.chosenArchetype !== ""){
+      if(store.chosenArchetype !== ""){
       //   // qua possiamo usare o backtick o concat, entrambi uniscono/aggiungono una stringa all altra
-      //   myURL = store.apiURL_archetypes + `${store.chosenArchetype}`
+      myURL = store.apiURL_movies + `${store.searchText}`
 
-      // }
+      }
 
       axios.get(myURL)
       .then
