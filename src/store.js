@@ -13,9 +13,5 @@ export const store= reactive({
 
     // collegato a v-model di input in AppSearch
     searchText:"",
-    
 
-    // questa non serve a niente. da cancellare-
-   apio: "https://api.themoviedb.org/3/search/movie?query=ritorno&include_adult=false&language=en-US&page=1",
-   
 });

@@ -32,7 +32,7 @@ export default {
 
         
         const resultArray = datoindietro.data.results
-        console.log(datoindietro.data);
+        console.log(datoindietro.data.results);
 
         store.filmArray = resultArray
 
@@ -47,7 +47,7 @@ export default {
 
         
         const resultArray = datoindietro.data.results
-        console.log(datoindietro.data);
+        console.log(datoindietro.data.results);
 
         store.seriesArray = resultArray
 

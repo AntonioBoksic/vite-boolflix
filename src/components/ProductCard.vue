@@ -4,7 +4,7 @@ export default {
     name: "ProductCard",
     props: {
     details: Object,
-    dettagli: Object,
+    // dettagli: Object,
   }
 }
 
@@ -21,12 +21,17 @@ export default {
 
             </div>
         
-            <div class="titolo-card">{{ details.title }}</div>
+            <div class="titolo-card">{{ details.title ? details.title : details.name }}</div>  
+            <!-- .name per SERIE  -->
 
-            <div class="titoloOriginale-card">{{ details.original_title }}</div>
+            <div class="titoloOriginale-card">{{ details.original_title ? details.original_title : details.original_name }}</div>
+             <!-- .original_name per SERIE  -->
 
             <div class="voto-card">Voto: {{ details.vote_average }}</div>
+            <!-- .vote_average per SERIE  -->
+
             <div class="lingua-card">Lingua originale: {{ details.original_language }}</div>
+            <!-- .original_language per SERIE  -->
 
     </div>
 

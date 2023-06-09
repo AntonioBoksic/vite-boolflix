@@ -49,7 +49,7 @@ export default {
         <ProductCard 
         v-for="(serie,index) in store.seriesArray"
         :key='index'
-        :dettagli="serie"
+        :details="serie"
         />
 
 
