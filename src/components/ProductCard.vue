@@ -3,7 +3,8 @@
 export default {
     name: "ProductCard",
     props: {
-    details: Object
+    details: Object,
+    dettagli: Object,
   }
 }
 

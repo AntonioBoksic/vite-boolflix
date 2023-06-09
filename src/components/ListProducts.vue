@@ -32,10 +32,27 @@ export default {
 
       <div class="boxes">
 
-        <!-- blocco prodotto -->
-        <ProductCard v-for="(film,index) in store.filmArray" :key='index'
+
+
+        <!-- SEZIONE DEI FILM -->
+        FILM
+        <ProductCard 
+        v-for="(film,index) in store.filmArray"
+        :key='index'
         :details="film"
         />
+      </div>
+
+      <div class="boxes">
+        <!-- SEZIONE DELLE SERIE TV -->
+        SERIE TV
+        <ProductCard 
+        v-for="(serie,index) in store.seriesArray"
+        :key='index'
+        :dettagli="serie"
+        />
+
+
 
       </div>   
 

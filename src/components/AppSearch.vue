@@ -17,7 +17,8 @@ export default {
         v-model.trim="store.searchText">
         <!-- il .trim serve ad eliminare gli spazi -->
 
-        <button @click="$emit('mySelection')">
+        <button 
+        @click="$emit('mySelection')">
             SEARCH
 
             

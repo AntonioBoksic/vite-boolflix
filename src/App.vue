@@ -17,17 +17,16 @@ export default {
     }
   },
   methods: {
-    getCharachters() {
+    getMovies_and_series() {
+      let myURL_movies = store.apiURL_movies
+      let myURL_series = store.apiURL_series
 
-      let myURL = store.apiURL_movies
-
-      if(store.chosenArchetype !== ""){
-      //   // qua possiamo usare o backtick o concat, entrambi uniscono/aggiungono una stringa all altra
-      myURL = store.apiURL_movies + `${store.searchText}`
-
+      if(store.searchText !== ""){
+      myURL_movies = myURL_movies + `${store.searchText}`
+      myURL_series = store.apiURL_series + `${store.searchText}`
       }
 
-      axios.get(myURL)
+      axios.get(myURL_movies)
       .then
         ( (datoindietro) => {
 
@@ -41,10 +40,49 @@ export default {
       .catch(err =>{
         console.log(err)
       });
+
+      axios.get(myURL_series)
+      .then
+        ( (datoindietro) => {
+
+        
+        const resultArray = datoindietro.data.results
+        console.log(datoindietro.data);
+
+        store.seriesArray = resultArray
+
+      })
+      .catch(err =>{
+        console.log(err)
+      });
     },
+    // getSeries() {
+    //   let myURL_series = store.apiURL_series
+
+    //   if(store.searchText !== ""){
+    //   myURL_series = myURL_series + `${store.searchText}`
+    //   }
+
+    //   axios.get(myURL_series)
+    //   .then
+    //     ( (datoindietro) => {
+
+        
+    //     const resultArray = datoindietro.data.results
+    //     console.log(datoindietro.data);
+
+    //     store.seriesArray = resultArray
+
+    //   })
+    //   .catch(err =>{
+    //     console.log(err)
+    //   });
+    // },
   },
   created(){
-    this.getCharachters();
+    // this.getMovies_and_series();
+
+    // this.getSeries();
   },
 }
 </script>
@@ -54,7 +92,7 @@ export default {
   <header>
     <div class="container">
       <h1>BOOLFLIX</h1>
-      <AppSearch @mySelection="getCharachters"/>
+      <AppSearch @mySelection="getMovies_and_series"/>
     </div>
     
   </header>
