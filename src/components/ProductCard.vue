@@ -1,11 +1,19 @@
 <script>
 
+import { store } from "./../store.js";
+
 export default {
     name: "ProductCard",
     props: {
     details: Object,
     // dettagli: Object,
-  }
+  },
+  data() {
+     return {
+       store,
+            
+     }
+  },
 }
 
 </script>
@@ -16,10 +24,6 @@ export default {
     <!-- blocco prodotto -->
     <div class="prod-card">
 
-            <div class="img-card">
-                <img src="" alt="">
-
-            </div>
         
             <div class="titolo-card">{{ details.title ? details.title : details.name }}</div>  
             <!-- .name per SERIE  -->
@@ -30,8 +34,11 @@ export default {
             <div class="voto-card">Voto: {{ details.vote_average }}</div>
             <!-- .vote_average per SERIE  -->
 
-            <div class="lingua-card">Lingua originale: {{ details.original_language }}</div>
+            <!-- <div class="lingua-card">Lingua originale: {{ store.lingueDiCuiHoBandiere.includes(details.original_language) ? '../../public/' + details.original_language + '.png' : details.original_language }}</div> -->
             <!-- .original_language per SERIE  -->
+
+            <img class="bandiera"
+            :src="store.lingueDiCuiHoBandiere.includes(details.original_language) ? '/' + details.original_language + '.png' : details.original_language" :alt="store.lingueDiCuiHoBandiere.includes(details.original_language) ? '/' + details.original_language + '.png' : details.original_language">
 
     </div>
 
@@ -51,15 +58,7 @@ export default {
     margin-bottom: 30px;
     height: 350px;
 
-    .img-card{
-        height: 70%;
-
-        img{
-        height: 100%;
-        width: 100%;
-        }
-
-    }
+    
 
     .titolo-card {
         padding-top: 6px;
@@ -68,12 +67,11 @@ export default {
         font-weight: 900;
     }
 
-    .archetype-card {
-        padding-top: 6px;
-        height: 15%;
-        text-align: center;
-        color: black;
+    .bandiera {
+        width: 30px;
+        height: 20px;
     }
+
 
 
     

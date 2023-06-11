@@ -14,4 +14,8 @@ export const store= reactive({
     // collegato a v-model di input in AppSearch
     searchText:"",
 
+
+    // per poter utilizzare bandiere se esistono
+    lingueDiCuiHoBandiere: ["it", "en", "ja"]
+
 });
