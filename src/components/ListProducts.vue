@@ -32,7 +32,6 @@ export default {
 
       <h1>--FILM--</h1>
       <hr>
-      <hr>
       <div class="boxes">
         <!-- SEZIONE DEI FILM -->
         
@@ -40,11 +39,11 @@ export default {
         v-for="(film,index) in store.filmArray"
         :key='index'
         :details="film"
+        
         />
       </div>
 
       <h1>--SERIE TV--</h1>
-      <hr>
       <hr>
       <div class="boxes">
         <!-- SEZIONE DELLE SERIE TV -->
