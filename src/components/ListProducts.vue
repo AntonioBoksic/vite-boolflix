@@ -30,12 +30,12 @@ export default {
   <div class="container">
     <section class="products">
 
+      <h1>--FILM--</h1>
+      <hr>
+      <hr>
       <div class="boxes">
-
-
-
         <!-- SEZIONE DEI FILM -->
-        FILM
+        
         <ProductCard 
         v-for="(film,index) in store.filmArray"
         :key='index'
@@ -43,9 +43,11 @@ export default {
         />
       </div>
 
+      <h1>--SERIE TV--</h1>
+      <hr>
+      <hr>
       <div class="boxes">
         <!-- SEZIONE DELLE SERIE TV -->
-        SERIE TV
         <ProductCard 
         v-for="(serie,index) in store.seriesArray"
         :key='index'
@@ -73,6 +75,14 @@ export default {
 .container {
     color: white;
     height: 100%;
+}
+
+hr {
+  color: white;
+}
+
+h1 {
+  text-align: center;
 }
 
 

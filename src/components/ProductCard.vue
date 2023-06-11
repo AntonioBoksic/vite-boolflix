@@ -38,10 +38,10 @@ export default {
         <div class="titolo-card">{{ details.title ? details.title : details.name }}</div>  
         <!-- .name per SERIE  -->
 
-        <div class="titoloOriginale-card">Titolo originale: {{ details.original_title ? details.original_title : details.original_name }}</div>
+        <div class="titoloOriginale-card"><strong>Titolo originale: </strong>{{ details.original_title ? details.original_title : details.original_name }}</div>
         <!-- .original_name per SERIE  -->
 
-        <div class="voto-card">Voto:
+        <div class="voto-card"><strong>Voto: </strong>
             <i v-for="star in Math.round(details.vote_average / 2)" class='fa-solid fa-star'></i>
         </div>
         <!-- .vote_average per SERIE  -->
@@ -49,7 +49,7 @@ export default {
         <!-- <div class="lingua-card">Lingua originale: {{ store.lingueDiCuiHoBandiere.includes(details.original_language) ? '../../public/' + details.original_language + '.png' : details.original_language }}</div> -->
         <!-- .original_language per SERIE  -->
 
-        <span>Lingua originale:</span>
+        <span><strong>Lingua originale: </strong></span>
         <img class="bandiera"
         :src="store.lingueDiCuiHoBandiere.includes(details.original_language) ? '/' + details.original_language + '.png' : details.original_language" :alt="store.lingueDiCuiHoBandiere.includes(details.original_language) ? '/' + details.original_language + '.png' : details.original_language">
 

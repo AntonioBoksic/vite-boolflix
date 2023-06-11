@@ -111,11 +111,14 @@ export default {
 header {
 
   background-color: $primary;
+  height: 50px;
 
   .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 95%;
+    height: 100%;
     margin: 0 auto;
 
     h1 {
@@ -128,6 +131,8 @@ header {
 main {
   background-color: grey;
   padding-bottom: 20px;
+  overflow-y: auto;
+  height: calc( 100vh - 50px );
  
 
   // .container {
@@ -138,18 +143,6 @@ main {
   
   // }
 
-.jumbotron {
-  height: 300px;
-  
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit:cover;
-      object-position: top;
-      
-    }
-  
-}
   
 }
 
